@@ -1,0 +1,39 @@
+<configuration>
+  <appender name="FILE" class="com.aquima.web.logging.AquimaHomeRollingFileAppender">
+    <encoder>
+      <!-- Possible log keys: aquima.httpSessionId, runtimeSessionId, userName, userId, projectName, projectVersion, currentPageName -->
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %40.40logger{40} runtimeSessionId="%X{runtimeSessionId}" userId="%X{userId}" projectName="%X{projectName}" projectVersion="%X{projectVersion}" currentPageName="%X{currentPageName}" - %msg%n</pattern>
+    </encoder>
+    <file>aquima:logs/log.txt</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>aquima:logs/log-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy class="com.aquima.web.logging.AquimaHomeSizeAndTimeBasedFNATP">
+        <!-- or whenever the file size reaches 10MB -->
+        <maxFileSize>10MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+  </appender>
+ 
+  <!-- Limit the org.springframework category to WARN as its DEBUG is verbose -->
+  <logger name="org.springframework" level="WARN" />
+
+  <!-- Limit the org.apache category to INFO as its DEBUG is verbose -->
+  <logger name="org.apache" level="INFO" />
+
+  <!-- Limit the org.quartz category to INFO as its DEBUG is verbose -->
+  <logger name="org.quartz" level="INFO" />
+
+  <!-- Limit the org.mortbay category to INFO as its DEBUG is verbose -->
+  <logger name="org.mortbay" level="INFO" />
+
+  <!-- Limit the org.hibernate category to INFO as its DEBUG is verbose -->
+  <logger name="org.hibernate" level="INFO" />
+  
+  <!-- Limit the tomcat http client communication to INFO as its DEBUG is verbose -->
+  <logger name="httpclient.wire" level="INFO" />
+
+  <root level="DEBUG">
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>
