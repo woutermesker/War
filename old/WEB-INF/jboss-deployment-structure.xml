@@ -1,9 +1,0 @@
-<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
-	<!-- For JBoss7AS and WS-Security to play nice must exclude the SAAJ jars -->
-	<deployment>
-		<exclusions>
-			<module name="javax.xml.soap.api" />
-			<module name="org.slf4j" />
-		</exclusions>
-	</deployment>
-</jboss-deployment-structure>
