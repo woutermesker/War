@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jul 11 16:54:36 CEST 2017
+https\://repo.backbase.com/repo/.error=Could not transfer artifact org.springframework\:spring-framework-bom\:jar\:3.2.14.RELEASE from/to Backbase Artifact Repository 1 (https\://repo.backbase.com/repo/)\: Access denied to\: https\://repo.backbase.com/repo/org/springframework/spring-framework-bom/3.2.14.RELEASE/spring-framework-bom-3.2.14.RELEASE.jar , ReasonPhrase\:Forbidden.
+2156288ee35d1659fabecd49542540f9c0769d57@default-Backbase\ Artifact\ Repository\ 1-https\://repo.backbase.com/repo/.lastUpdated=1499784876498
